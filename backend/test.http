@@ -1,0 +1,94 @@
+POST http://localhost:8000/api/v1/auth/register 
+content-type: application/json
+
+{
+    "fullName": "Ami Danecha",
+    "email": "ami@gmail.com",
+    "password":"ami@123",
+    "profileImageUrl":"http://localhost:8000/uploads/1771571829398-i1.jpg"
+
+}
+
+###
+
+POST http://localhost:8000/api/v1/auth/login 
+content-type: application/json
+
+{
+    "email": "priyanshi@gmail.com",
+    "password":"priyanshi@123"
+
+}
+
+###
+
+GET http://localhost:8000/api/v1/auth/getUser 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OTgyZDRhNzU3YTBiNzkwMjkxODBlYSIsImlhdCI6MTc3MTU4MDc2MCwiZXhwIjoxNzcxNTg0MzYwfQ.MiQ6Bq5iEx0wgRyws3ZOMvv1aEPbPiolLGZ7yKVRqyA
+
+###
+POST http://localhost:8000/api/v1/auth/upload-image
+Content-Type: multipart/form-data; boundary=MyBoundary
+
+--MyBoundary
+Content-Disposition: form-data; name="image"; filename="w2.jpg"
+Content-Type: image/jpeg
+
+< C:/Users/Admin/Pictures/w2.jpg
+--MyBoundary--
+
+
+###
+POST http://localhost:8000/api/v1/income/add 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OTgyZDRhNzU3YTBiNzkwMjkxODBlYSIsImlhdCI6MTc3MTU4MDc2MCwiZXhwIjoxNzcxNTg0MzYwfQ.MiQ6Bq5iEx0wgRyws3ZOMvv1aEPbPiolLGZ7yKVRqyA
+content-type: application/json
+
+{
+    "icon": "",
+    "source": "Salary",
+    "amount":5600,
+    "date":"2026-02-01T00:00:00.000Z"
+
+}
+
+###
+
+GET http://localhost:8000/api/v1/income/get 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OTgyZDRhNzU3YTBiNzkwMjkxODBlYSIsImlhdCI6MTc3MTU4MDc2MCwiZXhwIjoxNzcxNTg0MzYwfQ.MiQ6Bq5iEx0wgRyws3ZOMvv1aEPbPiolLGZ7yKVRqyA
+
+###
+DELETE http://localhost:8000/api/v1/income/69982d78757a0b79029180f0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OTgyZDRhNzU3YTBiNzkwMjkxODBlYSIsImlhdCI6MTc3MTU4MTEyNSwiZXhwIjoxNzcxNTg0NzI1fQ.si5G2WZolczSCLjIjcj8kpOW5CJ2ry4NL_PMGo7WptM
+
+###
+GET http://localhost:8000/api/v1/income/downloadexcel 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OTgyZDRhNzU3YTBiNzkwMjkxODBlYSIsImlhdCI6MTc3MTU4MDc2MCwiZXhwIjoxNzcxNTg0MzYwfQ.MiQ6Bq5iEx0wgRyws3ZOMvv1aEPbPiolLGZ7yKVRqyA
+
+###
+POST http://localhost:8000/api/v1/expense/add 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OTdmYmI5MzdlZDU3MDY5NjJhZjE0ZCIsImlhdCI6MTc3MTU4NjI3MiwiZXhwIjoxNzcxNTg5ODcyfQ.tMqSHCpek94YUxd5GOAXT5uf5o2Gq3muMhi76GA_zm4
+content-type: application/json
+
+{
+    "icon": "",
+    "category": "Rent",
+    "amount":300,
+    "date":"2026-02-01T00:00:00.000Z"
+
+}
+
+###
+
+GET http://localhost:8000/api/v1/expense/get 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OTdmYmI5MzdlZDU3MDY5NjJhZjE0ZCIsImlhdCI6MTc3MTU4NjI3MiwiZXhwIjoxNzcxNTg5ODcyfQ.tMqSHCpek94YUxd5GOAXT5uf5o2Gq3muMhi76GA_zm4
+
+###
+DELETE http://localhost:8000/api/v1/expense/69983651b6bcd6176aaa876d
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OTgyZDRhNzU3YTBiNzkwMjkxODBlYSIsImlhdCI6MTc3MTU4MTEyNSwiZXhwIjoxNzcxNTg0NzI1fQ.si5G2WZolczSCLjIjcj8kpOW5CJ2ry4NL_PMGo7WptM
+
+###
+GET http://localhost:8000/api/v1/dashboard
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OTdmYmI5MzdlZDU3MDY5NjJhZjE0ZCIsImlhdCI6MTc3MTU4NjI3MiwiZXhwIjoxNzcxNTg5ODcyfQ.tMqSHCpek94YUxd5GOAXT5uf5o2Gq3muMhi76GA_zm4
+
+
+
+
