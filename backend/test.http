@@ -39,14 +39,14 @@ Content-Type: image/jpeg
 
 ###
 POST http://localhost:8000/api/v1/income/add 
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OTgyZDRhNzU3YTBiNzkwMjkxODBlYSIsImlhdCI6MTc3MTU4MDc2MCwiZXhwIjoxNzcxNTg0MzYwfQ.MiQ6Bq5iEx0wgRyws3ZOMvv1aEPbPiolLGZ7yKVRqyA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OTdmYmI5MzdlZDU3MDY5NjJhZjE0ZCIsImlhdCI6MTc3MTkzMTc3OCwiZXhwIjoxNzcxOTM1Mzc4fQ.jNtMPuPvopyQR5pP-tNeY-5rWVbyVIu4rcoqYKhTTsc
 content-type: application/json
 
 {
     "icon": "",
-    "source": "Salary",
-    "amount":5600,
-    "date":"2026-02-01T00:00:00.000Z"
+    "source": "Winning Money",
+    "amount":1000,
+    "date":"2026-02-04T00:00:00.000Z"
 
 }
 
@@ -65,14 +65,14 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OTgyZDRhN
 
 ###
 POST http://localhost:8000/api/v1/expense/add 
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OTdmYmI5MzdlZDU3MDY5NjJhZjE0ZCIsImlhdCI6MTc3MTU4NjI3MiwiZXhwIjoxNzcxNTg5ODcyfQ.tMqSHCpek94YUxd5GOAXT5uf5o2Gq3muMhi76GA_zm4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OTdmYmI5MzdlZDU3MDY5NjJhZjE0ZCIsImlhdCI6MTc3MTkzMTc3OCwiZXhwIjoxNzcxOTM1Mzc4fQ.jNtMPuPvopyQR5pP-tNeY-5rWVbyVIu4rcoqYKhTTsc
 content-type: application/json
 
 {
     "icon": "",
-    "category": "Rent",
-    "amount":300,
-    "date":"2026-02-01T00:00:00.000Z"
+    "category": "Entertainment",
+    "amount":500,
+    "date":"2026-02-04T00:00:00.000Z"
 
 }
 
