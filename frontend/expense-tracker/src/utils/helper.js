@@ -1,4 +1,5 @@
 import moment from "moment";
+import { data } from "react-router-dom";
 export const validateEmail = (email) => {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return regex.test(email);
@@ -26,17 +27,40 @@ export const addThousandsSeperator = (num) => {
 export const prepareExpenseBarChartData=(data=[])=>{
   const chartData=data.map((item)=>({
     category:item?.category,
-    amount:item?.amount,
+    amount: Number(item?.amount) || 0,
   }))
   return chartData;
 }
 
-export const prepareIncomeBarChartData=(data=[])=>{
-  const sortedData=[...data].sort((a,b)=>(new Date(a.Date)-new Date(b.Date)))
+
+
+export const prepareIncomeBarChartData = (data = []) => {
+  const grouped = data.reduce((acc, item) => {
+    // 1. Format the date to use as a key (e.g., "15th Feb")
+    const dateKey = moment(item?.date || item?.Date).format('Do MMM');
+    
+    if (!acc[dateKey]) {
+      acc[dateKey] = { category: dateKey, amount: 0 };
+    }
+    // 2. Add the amounts together so they don't overwrite each other
+    acc[dateKey].amount += Number(item?.amount || 0);
+    return acc;
+  }, {});
+
+  // 3. Convert back to array and sort by date
+  return Object.values(grouped).sort((a, b) => 
+    moment(a.category, 'Do MMM').toDate() - moment(b.category, 'Do MMM').toDate()
+  );
+};
+
+export const prepareExpenseLineChartData=(data=[])=>{
+  const sortedData=[...data].sort((a,b)=>new Date(a.date)-new Date(b.date));
   const chartData=sortedData.map((item)=>({
-    month:moment(item?.date).format('Do MMM'),
+    month:moment(item?.date).format("Do MMM"),
     amount:item?.amount,
-    source:item?.source,
+    category:item?.category,
   }))
   return chartData;
 }
+
+

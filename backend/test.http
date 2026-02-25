@@ -65,14 +65,14 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OTgyZDRhN
 
 ###
 POST http://localhost:8000/api/v1/expense/add 
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OTdmYmI5MzdlZDU3MDY5NjJhZjE0ZCIsImlhdCI6MTc3MTkzMTc3OCwiZXhwIjoxNzcxOTM1Mzc4fQ.jNtMPuPvopyQR5pP-tNeY-5rWVbyVIu4rcoqYKhTTsc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OTdmYmI5MzdlZDU3MDY5NjJhZjE0ZCIsImlhdCI6MTc3MTk5MjkzOCwiZXhwIjoxNzcxOTk2NTM4fQ.gogqVSIrRPHuAvZEARU6NQL_rcmfXgzJ_b-EPFejgOc
 content-type: application/json
 
 {
     "icon": "",
-    "category": "Entertainment",
-    "amount":500,
-    "date":"2026-02-04T00:00:00.000Z"
+    "category": "Shopping",
+    "amount":200,
+    "date":"2026-02-05T00:00:00.000Z"
 
 }
 

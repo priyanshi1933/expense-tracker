@@ -1,20 +1,20 @@
 import React from "react";
-import { LuArrowRight } from "react-icons/lu";
+import { LuDownload } from "react-icons/lu";
 import TransactionInfoCard from "../Cards/TransactionInfoCard";
 import moment from "moment";
 
-const ExpenseTransactions = ({ transactions, onSeeMore }) => {
+const ExpenseList = ({ transactions, onDelete, onDownload }) => {
   return (
     <div className="card">
       <div className="flex items-center justify-between">
-        <h5 className="text-lg">Expenses</h5>
-        <button className="card-btn" onClick={onSeeMore}>
-          See All
-          <LuArrowRight className="text-base" />
+        <h5 className="text-lg">All Expenses</h5>
+        <button className="card-btn" onClick={onDownload}>
+          <LuDownload className="text-base" />
+          Download
         </button>
       </div>
-      <div className="mt-6">
-        {transactions?.slice(0, 4)?.map((expense) => (
+      <div className="grid grid-cols-1 md:grid-cols-2">
+        {transactions?.map((expense) => (
           <TransactionInfoCard
             key={expense._id}
             title={expense.category}
@@ -22,7 +22,7 @@ const ExpenseTransactions = ({ transactions, onSeeMore }) => {
             date={moment(expense.date).format("Do MMM YYYY")}
             amount={expense.amount}
             type="expense"
-            hideDeleteBtn
+            onDelete={() => onDelete(expense._id)}
           />
         ))}
       </div>
@@ -30,4 +30,4 @@ const ExpenseTransactions = ({ transactions, onSeeMore }) => {
   );
 };
 
-export default ExpenseTransactions;
+export default ExpenseList;
